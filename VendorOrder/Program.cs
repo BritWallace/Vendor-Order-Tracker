@@ -1,7 +1,7 @@
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
 
-namespace VendorOrderTracker
+namespace VendorOrder
 {
   public class Program
   {
@@ -11,7 +11,7 @@ namespace VendorOrderTracker
         .UseKestrel()
         .UseContentRoot(Directory.GetCurrentDirectory())
         .UseIISIntegration()
-        // .UseStartup<Startup>()
+        .UseStartup<Startup>()
         .Build();
 
       host.Run();
