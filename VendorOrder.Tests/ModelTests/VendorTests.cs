@@ -46,15 +46,6 @@ namespace VendorOrder.Tests
     }
   }
 }
-  //   public class VendorTests
-  //   {
-  //   public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
-  //   {
-  //     Vendor newVendor = new Vendor("Yo");
-  //     Assert.AreEqual(typeof(Vendor), newVendor.GetType());
-  //   }
-    
-
 
 
 
