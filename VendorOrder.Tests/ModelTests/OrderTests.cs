@@ -47,12 +47,26 @@ namespace VendorOrder.Tests
       List<Order> result = Order.GetAll();
       CollectionAssert.AreEqual(newOrder, result);
     }
+    [TestMethod]
+    public void Find_ReturnsOrder_Order()
+    {
+      string name1 = "Joe's";
+      string description1 = "Bread";
+      int price1 = 50;
+      string date1 = "2022 February 23";
+
+      string name2 = "Olive's";
+      string description2 = "Pastries";
+      int price2 = 50;
+      string date2 = "2022 February 25";
+
+      Order newOrder1 = new Order(name1, description1, price1, date1);
+      Order newOrder2 = new Order(name2, description2, price2, date2);
+      //Act
+      Order result = Order.Find(2);
+      // Assert
+      Assert.AreEqual(newOrder2, result);
+    }
     
   }
 }
-
-  // [TestMethod]
-  
-  // {public void OrderConstructor_CreatesInstanceOfOrder_Order()
-  //   Order newOrder = new Order();
-  // }
