@@ -20,6 +20,13 @@ namespace VendorOrder.Tests
 
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
+    [TestMethod]
+    public void GetALl_ReturnsEmptyList_OrderList()
+    {
+    List<Order> newOrder = new List<Order> { };
+    List<Order>result = Order.GetAll();
+    CollectionAssert.AreEqual(newOrder, result);
+    }
   }
 }
 
