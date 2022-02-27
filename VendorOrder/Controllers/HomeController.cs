@@ -10,8 +10,8 @@ namespace VendorOrder.Controllers
     [HttpGet("/")]
     public ActionResult Index()
     {
-      List<Vendor> allItems = Vendor.GetAll();
-      return View(allItems);
+      
+      return View();
     }
   }
 }
