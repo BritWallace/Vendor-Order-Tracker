@@ -44,6 +44,17 @@ namespace VendorOrder.Tests
       //Assert
       CollectionAssert.AreEqual(newVendorList, result);
     }
+    [TestMethod]
+    public void  GetId_VendorReturnsWithId_Int()
+    {
+      string name = "Joe's";
+      string description = "Bread";
+      Vendor newVendor = new Vendor(name, description);
+
+      int result = newVendor.Id;
+      Assert.AreEqual(1, result);
+    }
+
   }
 }
 
