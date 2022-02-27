@@ -27,6 +27,7 @@ namespace VendorOrder.Tests
     List<Order>result = Order.GetAll();
     CollectionAssert.AreEqual(newOrder, result);
     }
+    
   }
 }
 

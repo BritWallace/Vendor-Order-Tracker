@@ -12,11 +12,11 @@ namespace VendorOrder.Tests
       Vendor.ClearAll();
     }
     [TestMethod]
-    public void OrderConstructor_CreatesInstanceOfOrder_Order()
+    public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
     {
-      Order newOrder = new Order("NameVendor", "tests description", 100, "tests date");
+      Vendor newVendor = new Vendor("NameVendor", "tests description");
 
-      Assert.AreEqual(typeof(Order), newOrder.GetType());
+      Assert.AreEqual(typeof(Vendor), newVendor.GetType());
     }
     [TestMethod]
     public void GetALl_ReturnsEmptyList_VendorList()
@@ -24,6 +24,25 @@ namespace VendorOrder.Tests
     List<Vendor> newList = new List<Vendor> { };
     List<Vendor>result = Vendor.GetAll();
     CollectionAssert.AreEqual(newList, result);
+    }
+    
+    [TestMethod]
+    public void GetALL_ReturnsVendorList_VendorList()
+    {
+      //Arrange
+      string description01 = "Bread";
+      string description02 = "Pastries";
+      string name01 = "Joe's";
+      string name02 = "Olive's";
+      Vendor newVendor1 = new Vendor(name01, description01);
+      Vendor newVendor2 = new Vendor(name02, description02);
+      List<Vendor> newVendorList = new List<Vendor> { newVendor1, newVendor2 };
+
+      //Act
+      List<Vendor> result = Vendor.GetAll();
+
+      //Assert
+      CollectionAssert.AreEqual(newVendorList, result);
     }
   }
 }
