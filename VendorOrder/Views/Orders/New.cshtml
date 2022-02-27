@@ -1,5 +1,18 @@
-<form action="/items" method="post">
-  <label for="description">Add a new item</label>
-  <input id="description" name="description" type="text">
-  <button type="submit">Submit</button>
-</form>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Vendor Order Tracker</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    @using VendorOrder.Models
+  </head>
+  <body>
+    <form action="/vendors/@Model.Id/orders" method="post">
+      <label for="name">Add vendor name here</label>
+      <input id="name" name="name" type="text">
+      <button type="submit">Submit</button>
+    </form>
+    <p><a href="/">Home Page</a></p>
+    <p><a href="/vendors">Vendor Page</a></p>
+  </body>
+</html>

@@ -54,6 +54,7 @@ namespace VendorOrder.Tests
       int result = newVendor.Id;
       Assert.AreEqual(1, result);
     }
+    
 
   }
 }
