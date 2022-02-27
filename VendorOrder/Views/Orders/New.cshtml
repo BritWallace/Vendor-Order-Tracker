@@ -9,8 +9,17 @@
   </head>
   <body>
     <form action="/vendors/@Model.Id/orders" method="post">
-      <label for="name">Add vendor name here</label>
-      <input id="name" name="name" type="text">
+      <label for="orderName">Add New Order</label>
+      <input id="vendorId" name="vendorId" type="hidden" value="@Model.Id">
+      <input id="orderName" name="orderNamee" type="text">
+      @* <label for="name">Add New Order</label>
+      <input id="name" name="name" type="text"> *@
+      <label for="orderDescription">Add Order Description</label>
+      <input id="orderDescription" name="orderDescription" type="text">
+      <label for="orderPrice">Add Price</label>
+      <input id="orderPrice" name="orderPrice" type="text">
+      <label for="orderDate">Add Date</label>
+      <input id="orderDate" name="orderDate" type="text">
       <button type="submit">Submit</button>
     </form>
     <p><a href="/">Home Page</a></p>
