@@ -24,11 +24,11 @@ namespace VendorOrder.Controllers
       return RedirectToAction("Index");
     }
     [HttpGet("/vendors/{vendorId}")]
-    public ActionResult Show(int vendorId)
+    public ActionResult Show(int id)
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
-      Vendor selectedVendor = Vendor.Find(vendorId);
-      List<Order> vendorOrders = selectedVendor.Order;
+      Vendor selectedVendor = Vendor.Find(id);
+      List<Order> vendorOrders = selectedVendor.Orders;
       model.Add("vendor", selectedVendor);
       model.Add("orders", vendorOrders);
       return View(model);
@@ -38,10 +38,9 @@ namespace VendorOrder.Controllers
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
       Vendor foundVendor = Vendor.Find(vendorId);
-      // int intPrice = int.Parse(orderPrice);
       Order newOrder = new Order(orderName, orderDescription, orderPrice, orderDate);
       foundVendor.AddOrder(newOrder);
-      List<Order> vendorOrders = foundVendor.Order;
+      List<Order> vendorOrders = foundVendor.Orders;
       model.Add("orders", vendorOrders);
       model.Add("vendor", foundVendor);
       return View("Show", model);
