@@ -28,34 +28,11 @@ namespace VendorOrder.Models
     {
       _instances.Clear();
     }
-      public static Order Find(int searchId)
+      public static Order Find(int num)
     {
-      return _instances[searchId];
+      return _instances[num -1];
     }
   }
 }
 
 
-
-
-
-
-
-
-// using System.Collections.Generic;
-
-// namespace VendorOrder.Models
-// {
-//   public class Order
-//   {
-//     // public string Title { get; set; }
-//   //   public Order(string title)
-//   // }
-//   // Title = title;
-// }
-//  public static void ClearAll()
-//     {
-//       _instances.Clear();
-//     }
-
-// }
